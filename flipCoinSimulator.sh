@@ -1,18 +1,19 @@
 #!/bin/bash -x
-
-r=$((RANDOM % 2))
-echo "enter 1 for head and 0 for tails"
-read choice 
+read times
+for((i=0;i<$times;i++))
+do
+r=$((RANDOM % 2)) 
 if [ $r -eq 1 ]
-then 
-	 echo heads
+then
+	heads=$(($heads+1))
 else 
-	echo tails
+	tails=$(($tails+1))
 fi
-
-if [ $r -eq $choice ]
-then 
-	echo "user won"
+done
+ 
+if [ $heads -gt $tails ]
+then
+	echo "heads won $heads"
 else
-	echo "user lost"
+	echo "tails wins $tails"
 fi
