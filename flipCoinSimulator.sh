@@ -1,6 +1,9 @@
 #!/bin/bash -x
-read times
-for((i=0;i<$times;i++))
+heads=0
+tails=0
+while [ $heads -le 21 ] && [ $tails -le 21 ]
+do
+for((i=0;i<100;i++))
 do
 r=$((RANDOM % 2)) 
 if [ $r -eq 1 ]
@@ -17,3 +20,4 @@ then
 else
 	echo "tails wins $tails"
 fi
+done
