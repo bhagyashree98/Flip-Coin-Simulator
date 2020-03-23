@@ -3,6 +3,8 @@ heads=0
 tails=0
 while [ $heads -le 21 ] && [ $tails -le 21 ]
 do
+i=0
+$i=$((i+1))
 for((i=0;i<100;i++))
 do
 r=$((RANDOM % 2)) 
@@ -21,3 +23,4 @@ else
 	echo "tails wins $tails"
 fi
 done
+echo "number of rounds $i"
